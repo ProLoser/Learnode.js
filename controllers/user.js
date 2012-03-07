@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:27017/learn');
+mongoose.connect('mongodb://learn:node@flame.mongohq.com:27060/learn');
 
 var Quote = new Schema();
 
