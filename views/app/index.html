@@ -1,0 +1,25 @@
+<h1>Checkout my quotes</h1>
+<div ng:controller="Quotes">
+	<form ng:submit="save(newRecord)">
+	<table cellspacing="0">
+		<tr>
+			<th>ID</th>
+			<th>Rank</th>
+			<th>Quote</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+			<th><input ng:model="newRecord.bash_id" placeholder="Bash ID"></th>
+			<th><input ng:model="newRecord.rank" placeholder="Rank"></th>
+			<th><textarea ng:model="newRecord.quote" placeholder="Quote"></textarea></th>
+			<th><input type="submit" value="Insert"></th>
+		</tr>
+		<tr ng:repeat="(index, row) in quotes">
+			<td>{{row.bash_id}}</td>
+			<td>{{row.rank}}</td>
+			<td>{{row.quote | html:'unsafe'}}</td>
+			<td><a ng:click="delete(index)">Delete</a></td>
+		</tr>
+	</table>
+	</form>
+</div>
